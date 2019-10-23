@@ -1,41 +1,40 @@
-#
 # This is the user-interface definition of a Shiny web application. You can
 # run the application by clicking 'Run App' above.
-#
-# Find out more about building applications with Shiny here:
-#
-#    http://shiny.rstudio.com/
-#
-
 library(shiny)
-
+library(parallel)
+library(foreach)
+library(doParallel)
+library(iterators)
 # Define UI for application that draws a histogram
 shinyUI(fluidPage(
     # Application title
     titlePanel("St Andrews Weather"),
-    # Sidebar with a slider input for number of bins
-    sidebarLayout(
-        # The side panel ----------------------------------------------------------
         sidebarPanel(
             # simple file uploader
-            fileInput("file", label = h3("Upload a CSV file")),
+            fileInput("file",label="Click the button to upload a CSV file",accept=c('text/csv','text/comma-separated-values,text/plain','.csv')),
             hr(),
-            selectInput('variance', 'Select a column', ""),
+            uiOutput("independent"),
             hr(),
-            fluidRow(column(12, verbatimTextOutput("mean"),"")),
+            uiOutput('action1') ,
             hr(),
-            fluidRow(column(12, verbatimTextOutput("ci"),""))
-            # fluidRow(column(3, verbatimTextOutput("ci"))),
+            uiOutput('action2') ,
+            hr(),
+            uiOutput('action3') ,
+            hr(),
+            p("Mean"),
+            verbatimTextOutput("mean"),
+            hr(),
+            p("CI"),
+            verbatimTextOutput("ci")
         ),
-        # The main panel (with tabs) ----------------------------------------------
-        # I'll put our results here
+        # The main panel 
+        # I'll put the distribution figure here
         mainPanel(
-        # lets have some tabs
+            # lets have some tabs
             tabsetPanel(
-            # one tab - just a plot
-              tabPanel("Plot", 
-                  plotOutput("distPlot"))
+                # one tab - just a plot
+                tabPanel("Plot",plotOutput("distPlot"))
             ) # end of tabsetPanel
         ) # end of main panel
-    ) # end of sidebarLayout
 )) # end fluidpage and UI
+
