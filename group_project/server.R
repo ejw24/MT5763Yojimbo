@@ -17,8 +17,8 @@ shinyServer(function(input,output,session){
     return(userdata)
   })
   output$mean <- renderPrint({
-    if (is.null(input$action1))return()
-    if (input$action1==0)return()
+    if (is.null(input$action1))return(invisible(""))
+    if (input$action1==0)return(invisible(""))
     isolate({
       df <- data()
       if(is.null(df))return(NULL)
@@ -33,8 +33,8 @@ shinyServer(function(input,output,session){
     })
   })
   output$ci <- renderPrint({
-    if (is.null(input$action2))return()
-    if (input$action2==0)return()
+    if (is.null(input$action2))return(invisible(""))
+    if (input$action2==0)return(invisible(""))
     isolate({
       df <- data()
       if(is.null(df))return(NULL)

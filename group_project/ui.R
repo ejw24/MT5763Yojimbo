@@ -23,8 +23,9 @@ shinyUI(fluidPage(
             hr(),
             uiOutput('action3') ,
             hr(),
-            p("Mean"),
+            p("MEAN"),
             verbatimTextOutput("mean"),
+            hr(),
             hr(),
             p("CI"),
             verbatimTextOutput("ci")
