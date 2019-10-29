@@ -84,5 +84,8 @@ shinyServer(function(input,output,session){
     items=names(df)
     selectInput("independent","Select ONE Variable:",items)
   })
+  output$table <- renderTable({
+    head(api())
+  })
 }) # end of server def
 

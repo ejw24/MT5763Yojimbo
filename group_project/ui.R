@@ -33,7 +33,8 @@ shinyUI(fluidPage(
             # lets have some tabs
             tabsetPanel(
                 # one tab - just a plot
-                tabPanel("Plot",plotOutput("distPlot"))
+                tabPanel("Plot",plotOutput("distPlot")),
+                tabPanel("Weather", tableOutput("table"))
             ) # end of tabsetPanel
         ) # end of main panel
 )) # end fluidpage and UI
