@@ -47,10 +47,10 @@ api <- function() {
                       "Sunrise" = sunrisetoday,
                       "Sunset" = sunsettoday,
                       "Looks like" = lookslike,
-                      "Current Temp (Celsius)" = currenttemp,
-                      "Minimum Temp (Celsius)" = mintemp,
-                      "Maximum Temp (Celsius)" = maxtemp,
-                      "Humidity" = humidity,
+                      "Current Temp (°C)" = currenttemp,
+                      "Minimum Temp (°C)" = mintemp,
+                      "Maximum Temp (°C)" = maxtemp,
+                      "Humidity (%)" = humidity,
                       "Time until Sunset (HH:MM:SS)" = timeuntilsunset)
   return(table)
 }

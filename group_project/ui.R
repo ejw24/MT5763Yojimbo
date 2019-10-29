@@ -36,7 +36,7 @@ shinyUI(fluidPage(
             tabsetPanel(
                 # one tab - just a plot
                 tabPanel("Plot",plotOutput("distPlot")),
-                tabPanel("Weather", tableOutput("table"),
+                tabPanel("Weather in St Andrews", tableOutput("table"),
                          h4(), actionButton("refresh", "Refresh"))
             ) # end of tabsetPanel
         ) # end of main panel
