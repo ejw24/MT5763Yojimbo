@@ -10,10 +10,10 @@ shinyUI(fluidPage(
     shinyjs::useShinyjs(),
     shinyjs::extendShinyjs(text = "shinyjs.refresh = function() { location.reload(); }"),
     # Application title
-    titlePanel("St Andrews Weather"),
+    titlePanel("St Andrews Weather and Bootstrapping"),
         sidebarPanel(
             # simple file uploader
-            fileInput("file",label="Click the button to upload a CSV file",accept=c('text/csv','text/comma-separated-values,text/plain','.csv')),
+            fileInput("file",label = "Click the button to upload a CSV file", accept = c('text/csv','text/comma-separated-values,text/plain','.csv')),
             hr(),
             uiOutput("independent"),
             hr(),
