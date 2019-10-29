@@ -56,3 +56,4 @@ api <- function() {
 a <- api()
 names(a)
 #download.file(get_icon_url(res$weather$icon), 'icon.png')
+
