@@ -7,6 +7,8 @@ library(doParallel)
 library(iterators)
 # Define UI for application that draws a histogram
 shinyUI(fluidPage(
+    shinyjs::useShinyjs(),
+    shinyjs::extendShinyjs(text = "shinyjs.refresh = function() { location.reload(); }"),
     # Application title
     titlePanel("St Andrews Weather"),
         sidebarPanel(
@@ -34,7 +36,8 @@ shinyUI(fluidPage(
             tabsetPanel(
                 # one tab - just a plot
                 tabPanel("Plot",plotOutput("distPlot")),
-                tabPanel("Weather", tableOutput("table"))
+                tabPanel("Weather", tableOutput("table"),
+                         h4(), actionButton("refresh", "Refresh"))
             ) # end of tabsetPanel
         ) # end of main panel
 )) # end fluidpage and UI

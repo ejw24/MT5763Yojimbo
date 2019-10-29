@@ -87,5 +87,8 @@ shinyServer(function(input,output,session){
   output$table <- renderTable({
     head(api())
   })
+  observeEvent(input$refresh, {
+    shinyjs::js$refresh()
+  })
 }) # end of server def
 
