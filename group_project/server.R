@@ -90,6 +90,5 @@ shinyServer(function(input,output,session){
   observeEvent(input$refresh, {
     shinyjs::js$refresh()
   })
-  
 }) # end of server def
 
